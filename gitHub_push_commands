@@ -1,0 +1,48 @@
+C:\~\UATAutopilot>cd C:\Workspace\UATAutopilot1
+
+C:\Workspace\UATAutopilot1>git init
+Reinitialized existing Git repository in C:/Workspace/UATAutopilot1/.git/
+
+C:\Workspace\UATAutopilot1>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   src/test/java/com/autopilot/TestCases/LoginPageTest.java
+
+
+C:\Workspace\UATAutopilot1>git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+C:\Workspace\UATAutopilot1>git add .
+
+C:\Workspace\UATAutopilot1>git commit -m "First commit"
+[master a54e466] First commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Workspace\UATAutopilot1>git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+C:\Workspace\UATAutopilot1>git remote add origin https://github.com/Vishwanathak007/UATAutopilot.git
+fatal: remote origin already exists.
+
+C:\Workspace\UATAutopilot1>git push -u origin master
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 614 bytes | 153.00 KiB/s, done.
+Total 9 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+To https://github.com/Vishwanathak007/UATAutopilot
+   d236784..a54e466  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
