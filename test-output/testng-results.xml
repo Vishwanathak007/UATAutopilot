@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="128427" started-at="2018-07-05T05:38:37Z" finished-at="2018-07-05T05:40:45Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="128427" started-at="2018-07-05T05:38:37Z" finished-at="2018-07-05T05:40:45Z">
+      <class name="com.autopilot.TestCases.ProcessDefPageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.autopilot.TestCases.ProcessDefPageTest@5c7fa833]" name="setUp" is-config="true" duration-ms="37409" started-at="2018-07-05T11:09:33Z" finished-at="2018-07-05T11:10:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="CreateProcessBasicDetailsTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.autopilot.TestCases.ProcessDefPageTest@5c7fa833]" name="CreateProcessBasicDetailsTest" duration-ms="34245" started-at="2018-07-05T11:10:11Z" data-provider="getProcessDefBasicTestData" finished-at="2018-07-05T11:10:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Test Process UAT]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[TestHow]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[TestWhy]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[60.0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateProcessBasicDetailsTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.autopilot.TestCases.ProcessDefPageTest@5c7fa833]" name="tearDown" is-config="true" duration-ms="1" started-at="2018-07-05T11:10:45Z" finished-at="2018-07-05T11:10:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.autopilot.TestCases.ProcessDefPageTest -->
+      <class name="com.autopilot.TestCases.LoginPageTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.autopilot.TestCases.LoginPageTest@1d057a39]" name="setUp" is-config="true" duration-ms="23913" started-at="2018-07-05T11:08:37Z" finished-at="2018-07-05T11:09:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginPageTitleTest()[pri:0, instance:com.autopilot.TestCases.LoginPageTest@1d057a39]" name="loginPageTitleTest" duration-ms="26" started-at="2018-07-05T11:09:01Z" finished-at="2018-07-05T11:09:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPageTitleTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.autopilot.TestCases.LoginPageTest@1d057a39]" name="tearDown" is-config="true" duration-ms="2080" started-at="2018-07-05T11:09:01Z" finished-at="2018-07-05T11:09:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.autopilot.TestCases.LoginPageTest@1d057a39]" name="setUp" is-config="true" duration-ms="12104" started-at="2018-07-05T11:09:03Z" finished-at="2018-07-05T11:09:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.autopilot.TestCases.LoginPageTest@1d057a39]" name="loginTest" duration-ms="8999" started-at="2018-07-05T11:09:15Z" finished-at="2018-07-05T11:09:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.autopilot.TestCases.LoginPageTest@1d057a39]" name="tearDown" is-config="true" duration-ms="3089" started-at="2018-07-05T11:09:24Z" finished-at="2018-07-05T11:09:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.autopilot.TestCases.LoginPageTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
