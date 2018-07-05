@@ -50,7 +50,7 @@ String sheetName="test-data";
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 
 	
