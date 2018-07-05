@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import com.autopilot.ObjectRepository.LoginPage;
 import com.autopilot.base.BaseClass;
 
-
+//LoginPageTest
 public class LoginPageTest extends BaseClass {
 	
 	LoginPage loginPage;
