@@ -21,7 +21,7 @@ public class BaseClass {
 		try 
 		{
 			prop=new Properties();
-			FileInputStream fis=new FileInputStream("C:\\Workspace\\AutopiolotUAT\\src\\com\\autopilot\\datafiles\\config.properties");
+			FileInputStream fis=new FileInputStream("C:\\Workspace\\UATAutopilot1\\src\\main\\java\\com\\autopilot\\datafiles\\config.properties");
 			prop.load(fis);
 		}
 		catch (FileNotFoundException e)

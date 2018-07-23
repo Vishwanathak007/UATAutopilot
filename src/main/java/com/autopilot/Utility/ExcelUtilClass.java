@@ -22,11 +22,11 @@ public class ExcelUtilClass {
     private static Sheet sheet;
   
     
-   //public static String FILE_PATH = "C:\\Workspace\\AutopiolotUAT\\TestData.xlsx";
-   public static String FILE_PATH = "C:\\Workspace\\AutopiolotUAT\\src\\com\\autopilot\\datafiles\\TestData.xlsx";
+   //public static String FILE_PATH = "C:\\\\Workspace\\\\AutopiolotUAT\\\\TestData.xlsx";
+    public static String FILE_PATH = "C:\\Workspace\\UATAutopilot1\\src\\main\\java\\com\\autopilot\\datafiles\\TestData.xlsx";
    
    
- //GetData From Excel
+   //GetData From Excel
  	public static Object[][] getTestData(String sheetName)
  	{
  		FileInputStream fis=null;

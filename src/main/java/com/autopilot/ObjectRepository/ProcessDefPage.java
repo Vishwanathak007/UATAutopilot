@@ -95,7 +95,7 @@ public class ProcessDefPage extends BaseClass{
         pickDate("30");
         UtilityClass.threadSleep(5000);       
         
-        pickTime("10","15");
+        pickTime("12","15");
         UtilityClass.threadSleep(3000);
 		
         duration_txt.sendKeys(pDuration);
@@ -105,55 +105,54 @@ public class ProcessDefPage extends BaseClass{
 	public void pickDate(String pdate)
 	{		
 		processStartDateField.click();
-		
-	   //String currentWindow= driver.getWindowHandle();
-	   //driver.switchTo().window(currentWindow);
-		
-		List<WebElement> allDates=driver.findElements(By.xpath(".//table[@id='startFromDate_table']/td"));
-		
+			
+		List<WebElement> allDates=driver.findElements(By.xpath(".//*[@id='startFromDate_table']/tbody/tr/td"));
+		System.out.println("select Date");
 		for(WebElement ele:allDates)
 		{			
 			String date=ele.getText();
 			
-			if(date.equalsIgnoreCase(pdate))
+			if(date.contains(pdate))
 			{
 				ele.click();
 				calenderOKBtn_select.click();
+				System.out.println("Date is selected...");
 				break;
 			}			
 		}
 	}
 	
-	public void pickTime(String phour,String pmin)
+	public void pickTime(String phour,String pmin) throws InterruptedException
 	{		
-		//processStartTimeField.click();                           
-		//processStartTimeField.clear(); 
-		
-		String currentWindow= driver.getWindowHandle();
-		driver.switchTo().window(currentWindow);
-		
-		List<WebElement> allHours=driver.findElements(By.xpath(".//*[@id='ui-timepicker-hours']/td"));
-		List<WebElement> allMins=driver.findElements(By.xpath(".//*[@id='ui-timepicker-minutes']/td"));
+		processStartTimeField.click();                           
+				
+	    System.out.println("Select Time...");
+		List<WebElement> allHours=driver.findElements(By.xpath(".//*[@id='ui-timepicker-div']//td[@class='ui-timepicker-hours']//td"));
+		List<WebElement> allMins=driver.findElements(By.xpath(".//*[@id='ui-timepicker-div']//td[@class='ui-timepicker-minutes']//td"));
 		
 		
 		for(WebElement ele:allHours)
 		{			
 			String hour=ele.getText();
 			
-			if(hour.equalsIgnoreCase(phour))
+			if(hour.contains(phour))
 			{
-				ele.click();				
+				ele.click();
+				System.out.println("Hour is selected...");
 				break;
 			}			
 		}
+		
+		Thread.sleep(3000);
 		
 		for(WebElement ele:allMins)
 		{			
 			String min=ele.getText();
 			
-			if(min.equalsIgnoreCase(pmin))
+			if(min.contains(pmin))
 			{
-				ele.click();				
+				ele.click();
+				System.out.println("Min is selected...");
 				break;
 			}			
 		}
