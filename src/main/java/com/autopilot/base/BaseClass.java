@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -28,15 +29,15 @@ public class BaseClass {
 		{
 			e.printStackTrace();
 		}
-			catch (IOException e)
-		    {				
-				e.printStackTrace();
-			}
+		catch (IOException e)
+		 {				
+			e.printStackTrace();
+		 }
 		
 	  }
 	
 	//Initializing the Webdriver Object
-		public  void initialization() throws InterruptedException
+		public void initialization() throws InterruptedException
 		{
 			String browserName=prop.getProperty("browser");
 			if(browserName.equals("chrome"))
@@ -52,6 +53,7 @@ public class BaseClass {
 			driver.manage().window().maximize();
 			driver.get(prop.getProperty("url"));
 			UtilityClass.threadSleep(5000);
+			//driver.findElement(By.xpath(""));
 		}
 		
 		

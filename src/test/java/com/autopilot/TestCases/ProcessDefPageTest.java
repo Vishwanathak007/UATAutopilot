@@ -1,5 +1,8 @@
 package com.autopilot.TestCases;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -8,6 +11,7 @@ import org.testng.annotations.Test;
 import com.autopilot.ObjectRepository.LoginPage;
 import com.autopilot.ObjectRepository.ProcessDefPage;
 import com.autopilot.Utility.ExcelUtilClass;
+import com.autopilot.Utility.UtilityClass;
 import com.autopilot.base.BaseClass;
 
 //ProcessPageTest
@@ -23,17 +27,18 @@ String sheetName="test-data";
 	}
 
 	@BeforeMethod
-	public void setUp() throws InterruptedException
+	public void setUp() throws Exception
 	{
 		initialization();
 		loginPage=new LoginPage();
 		loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		processdefpage=new ProcessDefPage();
 		processdefpage.goToCreateProcessPage();
+		UtilityClass.takeSnapShot("C:/Workspace/UATAutopilot1/Screenshots/"+new SimpleDateFormat("yyyy-MM-ddHHmmss").format(new Date())+".png");
 	}
 	
 	@Test(dataProvider="getProcessDefBasicTestData")
-	public void CreateProcessBasicDetailsTest(String title,String how,String why,String duration) throws InterruptedException
+	public void CreateProcessBasicDetailsTest(String title,String how,String why,String duration) throws Exception
 	{
 		processdefpage.createProcessBasic(title,how,why,duration);
 	}
@@ -50,7 +55,7 @@ String sheetName="test-data";
 	@AfterMethod
 	public void tearDown()
 	{
-		//driver.quit();
+		driver.quit();
 	}
 
 	

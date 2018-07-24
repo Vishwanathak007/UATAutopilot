@@ -1,5 +1,7 @@
 package com.autopilot.ObjectRepository;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,7 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.autopilot.Utility.UtilityClass;
 import com.autopilot.base.BaseClass;
-import org.openqa.selenium.support.ui.Select;
 public class ProcessDefPage extends BaseClass{
 	
 	//PageFactory - Page Objects
@@ -48,58 +49,60 @@ public class ProcessDefPage extends BaseClass{
 	@FindBy(xpath=".//*[@id='startTime']")
 	WebElement processStartTimeField;
 	
-		
+	
+	
 	public ProcessDefPage()
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
 	
-	public void goToCreateProcessPage() throws InterruptedException
+	public void goToCreateProcessPage() throws Exception
 	{
 		processMenu.click();
 		UtilityClass.threadSleep(5000);
 		processDefSubMenu.click();
 		UtilityClass.threadSleep(5000);
 		createProcessBtn.click();
-		UtilityClass.threadSleep(5000);		
+		UtilityClass.threadSleep(3000);			
 	}
 
-	public void createProcessBasic(String pTitle,String pHow,String pWhy, String pDuration) throws InterruptedException
+	public void createProcessBasic(String pTitle,String pHow,String pWhy, String pDuration) throws Exception
 	{
 		processTitle_txt.clear();
 		processTitle_txt.sendKeys(pTitle);
-		UtilityClass.threadSleep(3000);
+		UtilityClass.threadSleep(2000);
 		
 		how_txt.clear();
 		how_txt.sendKeys(pHow);
-		UtilityClass.threadSleep(3000);
+		UtilityClass.threadSleep(2000);
 		
 		why_txt.clear();
 		why_txt.sendKeys(pWhy);
-		UtilityClass.threadSleep(3000);
+		UtilityClass.threadSleep(2000);
 		
 		priority_select.click();
-		UtilityClass.threadSleep(3000);
+		UtilityClass.threadSleep(2000);
 		driver.findElement(By.xpath(".//*[@id='select_option_14']/div[1]")).click();
-		UtilityClass.threadSleep(3000);
+		UtilityClass.threadSleep(2000);
 		
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,250)", "");
         
 		accessLevel_select.click();
-		UtilityClass.threadSleep(3000);
+		UtilityClass.threadSleep(2000);
         driver.findElement(By.xpath(".//*[@id='select_option_19']/div[1]")).click();	
-        UtilityClass.threadSleep(3000);
+        UtilityClass.threadSleep(2000);
         
         pickDate("30");
-        UtilityClass.threadSleep(5000);       
+        UtilityClass.threadSleep(2000); 
+		UtilityClass.takeSnapShot("C:/Workspace/UATAutopilot1/Screenshots/"+new SimpleDateFormat("yyyy-MM-ddHHmmss").format(new Date())+".png");
         
-        pickTime("12","15");
-        UtilityClass.threadSleep(3000);
+        //pickTime("12","15");
+      //  UtilityClass.threadSleep(3000);
 		
         duration_txt.sendKeys(pDuration);
-        UtilityClass.threadSleep(3000);
+        UtilityClass.threadSleep(2000);
 	}
 	
 	public void pickDate(String pdate)
@@ -128,8 +131,7 @@ public class ProcessDefPage extends BaseClass{
 				
 	    System.out.println("Select Time...");
 		List<WebElement> allHours=driver.findElements(By.xpath(".//*[@id='ui-timepicker-div']//td[@class='ui-timepicker-hours']//td"));
-		List<WebElement> allMins=driver.findElements(By.xpath(".//*[@id='ui-timepicker-div']//td[@class='ui-timepicker-minutes']//td"));
-		
+		List<WebElement> allMins=driver.findElements(By.xpath(".//*[@id='ui-timepicker-div']//td[@class='ui-timepicker-minutes']//td"));		
 		
 		for(WebElement ele:allHours)
 		{			
@@ -143,7 +145,7 @@ public class ProcessDefPage extends BaseClass{
 			}			
 		}
 		
-		Thread.sleep(3000);
+		UtilityClass.threadSleep(2000);
 		
 		for(WebElement ele:allMins)
 		{			
@@ -157,4 +159,7 @@ public class ProcessDefPage extends BaseClass{
 			}			
 		}
 	}
+	
+	
+	
 }

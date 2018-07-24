@@ -10,10 +10,10 @@ import com.autopilot.base.BaseClass;
 public class LoginPage extends BaseClass {
 	
 	//PageFactory - Page Objects
-	@FindBy(name="username")
+	@FindBy(xpath=".//*[@id='username']")
 	WebElement username;
 	
-	@FindBy(name="password")
+	@FindBy(xpath=".//*[@id='password']")
 	WebElement password;
 	
 	@FindBy(id="loginBtn")
@@ -33,7 +33,7 @@ public class LoginPage extends BaseClass {
 	{
 		username.sendKeys(UN);
 		password.sendKeys(PWD);
-		UtilityClass.threadSleep(5000);
+		UtilityClass.threadSleep(3000);
 		loginBtn.click();
 	
 	}
