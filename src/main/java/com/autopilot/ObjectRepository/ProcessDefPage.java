@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.autopilot.Utility.UtilityClass;
@@ -35,7 +36,7 @@ public class ProcessDefPage extends BaseClass{
 	WebElement priority_select;	
 	
 	@FindBy(xpath=".//*[@id='select_21']")
-	WebElement accessLevel_select;		
+	WebElement jobType_select;		
 	
 	@FindBy(xpath=".//*[@id='startFromDate']")
 	WebElement processStartDateField;	
@@ -49,6 +50,14 @@ public class ProcessDefPage extends BaseClass{
 	@FindBy(xpath=".//*[@id='startTime']")
 	WebElement processStartTimeField;
 	
+	@FindBy(xpath=".//*[@id='select_50']")
+	WebElement accessLevel_select;
+	
+	@FindBy(xpath=".//*[@id='input_58']")
+	WebElement processOwner_drpdwn;
+	
+	@FindBy(xpath=".//*[@id='input_59']")
+	WebElement processcord_drpdwn;
 	
 	
 	public ProcessDefPage()
@@ -89,20 +98,44 @@ public class ProcessDefPage extends BaseClass{
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
         jse.executeScript("window.scrollBy(0,250)", "");
         
-		accessLevel_select.click();
+		jobType_select.click();
 		UtilityClass.threadSleep(2000);
         driver.findElement(By.xpath(".//*[@id='select_option_19']/div[1]")).click();	
         UtilityClass.threadSleep(2000);
         
+        //StartTime
         pickDate("30");
         UtilityClass.threadSleep(2000); 
-		UtilityClass.takeSnapShot("C:/Workspace/UATAutopilot1/Screenshots/"+new SimpleDateFormat("yyyy-MM-ddHHmmss").format(new Date())+".png");
+		UtilityClass.takeSnapShot("C:/Workspace/UATAutopilot1/Screenshots/"+new SimpleDateFormat("dd-MM-yyyyHHmmss").format(new Date())+".png");
         
-        //pickTime("12","15");
-      //  UtilityClass.threadSleep(3000);
+        pickTime("17","15");
+        UtilityClass.threadSleep(3000);
 		
-        duration_txt.sendKeys(pDuration);
+        //Duration
+        duration_txt.sendKeys(pDuration);        
         UtilityClass.threadSleep(2000);
+        
+        jse.executeScript("window.scrollBy(0,250)", "");
+        
+        //Access Level
+        accessLevel_select.click();
+        UtilityClass.threadSleep(2000); 
+        driver.findElement(By.xpath(".//*[@id='select_option_47']/div[1]")).click();
+        
+        //Process Owner
+        processOwner_drpdwn.click();
+        UtilityClass.threadSleep(2000);
+        driver.findElement(By.xpath(".//*[@id='input-121']")).click();
+        UtilityClass.threadSleep(2000);
+        driver.findElement(By.xpath(".//*[@id='ul-121']/li[1]")).click();
+        
+      //Process Coordinator
+        processcord_drpdwn.click();
+        UtilityClass.threadSleep(2000);
+        driver.findElement(By.xpath(".//*[@id='ul-123']")).click();
+        UtilityClass.threadSleep(2000);
+        driver.findElement(By.xpath(".//*[@id='ul-123']/li[1]")).click();
+        
 	}
 	
 	public void pickDate(String pdate)
@@ -132,22 +165,22 @@ public class ProcessDefPage extends BaseClass{
 	    System.out.println("Select Time...");
 		List<WebElement> allHours=driver.findElements(By.xpath(".//*[@id='ui-timepicker-div']//td[@class='ui-timepicker-hours']//td"));
 		List<WebElement> allMins=driver.findElements(By.xpath(".//*[@id='ui-timepicker-div']//td[@class='ui-timepicker-minutes']//td"));		
+		Actions action = new Actions(driver);
 		
 		for(WebElement ele:allHours)
 		{			
-			String hour=ele.getText();
+			String days=ele.getText();
 			
-			if(hour.contains(phour))
-			{
-				ele.click();
-				System.out.println("Hour is selected...");
+			if(days.contains(phour))
+			{				
+			   action.doubleClick(ele).build().perform();
+			   System.out.println("Hour is selected..."+days);
 				break;
 			}			
 		}
 		
-		UtilityClass.threadSleep(2000);
 		
-		for(WebElement ele:allMins)
+		/*for(WebElement ele:allMins)
 		{			
 			String min=ele.getText();
 			
@@ -157,7 +190,7 @@ public class ProcessDefPage extends BaseClass{
 				System.out.println("Min is selected...");
 				break;
 			}			
-		}
+		}*/
 	}
 	
 	

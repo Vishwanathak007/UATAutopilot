@@ -5,8 +5,9 @@
     <classes>
       <class name="com.autopilot.TestCases.ProcessDefPageTest">
         <methods>
-          <include name="CreateProcessBasicDetailsTest"/>
+          <include name="CreateProcessBasicDetailsTest" invocation-numbers="0"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.autopilot.TestCases.ProcessDefPageTest -->
     </classes>
