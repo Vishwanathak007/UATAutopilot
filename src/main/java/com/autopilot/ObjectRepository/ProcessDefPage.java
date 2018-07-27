@@ -59,6 +59,9 @@ public class ProcessDefPage extends BaseClass{
 	@FindBy(xpath=".//*[@id='input_59']")
 	WebElement processcord_drpdwn;
 	
+	@FindBy(xpath=".//*[@id='metaSubmit']")
+	WebElement btn_save;
+	
 	
 	public ProcessDefPage()
 	{
@@ -112,7 +115,7 @@ public class ProcessDefPage extends BaseClass{
         UtilityClass.threadSleep(3000);
 		
         //Duration
-        duration_txt.sendKeys(pDuration);        
+        duration_txt.sendKeys("10");        
         UtilityClass.threadSleep(2000);
         
         jse.executeScript("window.scrollBy(0,250)", "");
@@ -125,16 +128,26 @@ public class ProcessDefPage extends BaseClass{
         //Process Owner
         processOwner_drpdwn.click();
         UtilityClass.threadSleep(2000);
-        driver.findElement(By.xpath(".//*[@id='input-121']")).click();
+        driver.findElement(By.xpath(".//*[@placeholder='Pick a role']")).click();
         UtilityClass.threadSleep(2000);
-        driver.findElement(By.xpath(".//*[@id='ul-121']/li[1]")).click();
+        driver.findElement(By.xpath(".//span[text()=' Managing Director ']")).click();
+        driver.findElement(By.xpath(".//md-dialog-actions/button[1]")).click();
+        UtilityClass.threadSleep(2000);
         
       //Process Coordinator
         processcord_drpdwn.click();
         UtilityClass.threadSleep(2000);
-        driver.findElement(By.xpath(".//*[@id='ul-123']")).click();
+        driver.findElement(By.xpath(".//*[@placeholder='Pick a role']")).click();
         UtilityClass.threadSleep(2000);
-        driver.findElement(By.xpath(".//*[@id='ul-123']/li[1]")).click();
+        driver.findElement(By.xpath(".//span[text()=' GM ADMINISTRATOR ']")).click();
+        driver.findElement(By.xpath(".//md-dialog-actions/button[1]")).click();
+        UtilityClass.threadSleep(2000);
+        
+        jse.executeScript("window.scrollBy(0,250)", "");
+        
+        //Save Button
+        btn_save.click();
+        UtilityClass.threadSleep(3000);
         
 	}
 	
