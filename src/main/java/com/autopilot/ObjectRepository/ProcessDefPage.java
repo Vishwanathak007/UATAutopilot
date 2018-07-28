@@ -59,7 +59,7 @@ public class ProcessDefPage extends BaseClass{
 	@FindBy(xpath=".//*[@id='input_59']")
 	WebElement processcord_drpdwn;
 	
-	@FindBy(xpath=".//*[@id='metaSubmit']")
+	@FindBy(xpath=".//*[@id='metaSubmit']//span[contains(text(),'Save')]")
 	WebElement btn_save;
 	
 	
