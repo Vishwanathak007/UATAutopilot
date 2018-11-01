@@ -20,6 +20,7 @@ public class ProcessDefPageTest extends BaseClass{
 LoginPage loginPage;
 ProcessDefPage processdefpage;
 String sheetName="test-data";
+String filePath="C:\\Workspace\\UATAutopilot1\\src\\main\\java\\com\\autopilot\\datafiles\\TestData.xlsx";
 	
 	public ProcessDefPageTest()
 	{
@@ -47,7 +48,7 @@ String sheetName="test-data";
 	@DataProvider
 	public Object[][] getProcessDefBasicTestData()
 	{
-		Object[][] processDefBasicData=ExcelUtilClass.getTestData(sheetName);
+		Object[][] processDefBasicData=ExcelUtilClass.getTestData(sheetName,filePath);
 		return processDefBasicData;
 	}
 	

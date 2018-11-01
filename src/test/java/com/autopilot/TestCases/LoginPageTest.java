@@ -30,15 +30,13 @@ public class LoginPageTest extends BaseClass {
 	{
 		String title=loginPage.validateLoginPageTitle();
 		Assert.assertEquals(title, "VRKP : Auto Pilot Project");
-	}
-	
+	}	
 	
 	@Test(priority=2)
 	public void loginTest() throws InterruptedException
 	{
 		loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
 	}
-	
 	
 	@AfterMethod
 	public void tearDown()

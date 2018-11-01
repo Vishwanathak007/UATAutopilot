@@ -27,7 +27,7 @@ public class ExcelUtilClass {
    
    
    //GetData From Excel
- 	public static Object[][] getTestData(String sheetName)
+ 	public static Object[][] getTestData(String sheetName,String FILE_PATH)
  	{
  		FileInputStream fis=null;
  		

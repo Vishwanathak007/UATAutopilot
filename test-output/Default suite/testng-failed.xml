@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.autopilot.TestCases.ProcessDefPageTest">
+      <class name="com.autopilot.TestCases.InstancePageTest">
         <methods>
-          <include name="CreateProcessBasicDetailsTest" invocation-numbers="0"/>
-          <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="preTestcondition"/>
+          <include name="submitFormTest"/>
         </methods>
-      </class> <!-- com.autopilot.TestCases.ProcessDefPageTest -->
+      </class> <!-- com.autopilot.TestCases.InstancePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
