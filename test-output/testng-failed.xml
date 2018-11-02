@@ -5,8 +5,6 @@
     <classes>
       <class name="com.autopilot.TestCases.InstancePageTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="preTestcondition"/>
           <include name="submitFormTest"/>
         </methods>
       </class> <!-- com.autopilot.TestCases.InstancePageTest -->

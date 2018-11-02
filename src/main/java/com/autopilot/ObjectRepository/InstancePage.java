@@ -57,46 +57,57 @@ public class InstancePage extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void submit() throws Exception
+	public void submit(String rep_Path, String coal_Rate, String pallet_Rate, String dri_Rate, String billet_Rate, String tmt_Rate, String silico_Rate) throws Exception
 	{
-		initExcel();
+		
 		//browseBtn.clear();
-		browseBtn.sendKeys("C:\\ERP Testing\\Power Plant\\SOP 1.xlsx");
+		browseBtn.sendKeys(rep_Path);
 		Thread.sleep(3000);
 		
 		coalRate.clear();
-		coalRate.sendKeys("1100");
+		coalRate.sendKeys(coal_Rate);
 		Thread.sleep(3000);
 		
 		palletRate.clear();
-		palletRate.sendKeys(sheet.getRow(2).getCell(2).toString());
+		palletRate.sendKeys(pallet_Rate);
 		Thread.sleep(3000);
 		
 		DRIRate.clear();
-		DRIRate.sendKeys("3000");
+		DRIRate.sendKeys(dri_Rate);
 		Thread.sleep(3000);
 		
 		billetRate.clear();
-		billetRate.sendKeys("4000");
+		billetRate.sendKeys(billet_Rate);
 		Thread.sleep(3000);
 		
 		tmt.clear();
-		tmt.sendKeys("5000");
+		tmt.sendKeys(tmt_Rate);
 		Thread.sleep(3000);
 		
 		silicoRate.clear();
-		silicoRate.sendKeys("6000");
+		silicoRate.sendKeys(silico_Rate);
 		Thread.sleep(3000);
 
-        submitBtn.click();
+        saveBtn.click();
         Thread.sleep(3000); 
 	}
 	
-	public void initExcel() throws Exception, InvalidFormatException, IOException
+	public Object[][] getTestData() throws Exception, InvalidFormatException, IOException
 	{
 		fis=new FileInputStream(FILE_PATH);
 		book=WorkbookFactory.create(fis);
 		sheet =book.getSheet("instance-data");
+		
+		Object[][] testdata=new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
+		for(int i=0;i<=sheet.getLastRowNum();i++)
+		{
+			for(int j=0;j<=sheet.getRow(0).getLastCellNum();j++)
+			{
+				testdata[i][j]=sheet.getRow(i+2).getCell(j).toString();
+				System.out.println(testdata);
+			}
+		}
+		return testdata;
 	}
 	
 	
