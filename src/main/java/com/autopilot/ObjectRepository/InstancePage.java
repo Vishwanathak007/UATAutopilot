@@ -89,7 +89,7 @@ public class InstancePage extends BaseClass{
 		Thread.sleep(3000);
 
         saveBtn.click();
-        Thread.sleep(3000); 
+        Thread.sleep(3000);
 	}
 	
 	public Object[][] getTestData() throws Exception, InvalidFormatException, IOException
