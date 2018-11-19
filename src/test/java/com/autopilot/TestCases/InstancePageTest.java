@@ -15,6 +15,7 @@ import com.autopilot.ObjectRepository.InstancePage;
 import com.autopilot.ObjectRepository.LoginPage;
 import com.autopilot.base.BaseClass;
 
+//Instance Page Code
 public class InstancePageTest extends BaseClass {
 	
 	LoginPage loginPage;
