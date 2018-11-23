@@ -103,10 +103,10 @@ public class InstancePage extends BaseClass{
 		{
 			for(int j=0;j<=sheet.getRow(0).getLastCellNum();j++)
 			{
-				testdata[i][j]=sheet.getRow(i+2).getCell(j).toString();
-				System.out.println(testdata);
+				testdata[i][j]=sheet.getRow(i+2).getCell(j).toString();				
 			}
 		}
+		
 		return testdata;
 	}
 	

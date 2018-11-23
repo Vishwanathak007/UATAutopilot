@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="42" started-at="2018-11-02T11:04:00Z" finished-at="2018-11-02T11:04:00Z">
+  <suite name="Default suite" duration-ms="31" started-at="2018-11-23T12:31:17Z" finished-at="2018-11-23T12:31:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="42" started-at="2018-11-02T11:04:00Z" finished-at="2018-11-02T11:04:00Z">
+    <test name="Default test" duration-ms="31" started-at="2018-11-23T12:31:17Z" finished-at="2018-11-23T12:31:17Z">
       <class name="com.autopilot.TestCases.InstancePageTest">
-        <test-method status="FAIL" signature="submitFormTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.autopilot.TestCases.InstancePageTest@13e39c73]" name="submitFormTest" duration-ms="0" started-at="2018-11-02T16:34:00Z" data-provider="instTestDataProvider" finished-at="2018-11-02T16:34:00Z">
+        <test-method status="FAIL" signature="submitFormTest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.autopilot.TestCases.InstancePageTest@18be83e4]" name="submitFormTest" duration-ms="0" started-at="2018-11-23T18:01:17Z" data-provider="instTestDataProvider" finished-at="2018-11-23T18:01:17Z">
           <exception class="java.lang.RuntimeException">
             <message>
               <![CDATA[java.lang.NullPointerException]]>
@@ -36,7 +36,7 @@
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NullPointerException
-	at com.autopilot.TestCases.InstancePageTest.instTestDataProvider(InstancePageTest.java:47)
+	at com.autopilot.TestCases.InstancePageTest.instTestDataProvider(InstancePageTest.java:50)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

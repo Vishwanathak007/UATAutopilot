@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -20,8 +21,9 @@ public class InstancePageTest extends BaseClass {
 	
 	LoginPage loginPage;
 	InstancePage instPage;
-
-	@BeforeMethod	 
+	
+		
+	@BeforeMethod
 	public void preTestcondition() throws InterruptedException
 	{
 		initialization();
@@ -44,14 +46,14 @@ public class InstancePageTest extends BaseClass {
 	
 	@DataProvider
 	public Object[][] instTestDataProvider() throws InvalidFormatException, IOException, Exception
-	{
+	{ 
 		Object[][] instTestData=instPage.getTestData();
 		return instTestData;
 	}
 
    @AfterMethod
    public void tearDown() {
-	   //driver.close();
+	   driver.close();
    }
 
 }
