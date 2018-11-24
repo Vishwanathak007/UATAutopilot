@@ -50,7 +50,8 @@ public class ExcelUtilClass {
  		
  		sheet=book.getSheet(sheetName);
  		Object[][] data=new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
- 		
+ 		System.out.println("Last row no is "+sheet.getLastRowNum());
+ 		System.out.println("Last cellno is "+sheet.getRow(0).getLastCellNum());
  		for(int i=0; i<sheet.getLastRowNum();i++)
  		{
  			for(int j=0;j<sheet.getRow(0).getLastCellNum();j++)

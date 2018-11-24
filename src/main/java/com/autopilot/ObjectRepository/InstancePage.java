@@ -99,12 +99,23 @@ public class InstancePage extends BaseClass{
 		sheet =book.getSheet("instance-data");
 		
 		Object[][] testdata=new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
-		for(int i=0;i<=sheet.getLastRowNum();i++)
+		System.out.println(sheet.getLastRowNum());
+		System.out.println(sheet.getRow(0).getLastCellNum());
+		try
 		{
-			for(int j=0;j<=sheet.getRow(0).getLastCellNum();j++)
+			for(int i=0;i<sheet.getLastRowNum();i++)
 			{
-				testdata[i][j]=sheet.getRow(i+2).getCell(j).toString();				
+				for(int j=0;j<sheet.getRow(0).getLastCellNum();j++)
+				{
+					testdata[i][j]=sheet.getRow(i+1).getCell(j).toString();
+					System.out.println(testdata[i][j]);
+				}
 			}
+			
+		  }
+		catch (NullPointerException e)
+		{
+			System.out.println("Null Pointer Exception ....Please check the Code");
 		}
 		
 		return testdata;

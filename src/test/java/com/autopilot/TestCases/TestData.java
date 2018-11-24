@@ -22,19 +22,24 @@ public class TestData {
 		Object[][] testdata=new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
 		try
 		{
-			for(int i=0;i<=2;i++)
+			for(int i=0;i<sheet.getLastRowNum();i++)
 			{
-				for(int j=0;j<=7;j++)
+				for(int j=0;j<sheet.getRow(0).getLastCellNum();j++)
 				{
 					testdata[i][j]=sheet.getRow(i+1).getCell(j).toString();
 					System.out.println(testdata[i][j]);
 				}
 			}
-			System.out.println("The Length is.."+ testdata.length);
+			
 		  }
 		catch (NullPointerException e)
 		{
 			System.out.println("Null Pointer Exception ....Please check the Code");
+		}
+		
+		catch (ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Array Index Out of Bounds Exception ....Please check the Code");
 		}
 	
 		System.out.println(testdata);
